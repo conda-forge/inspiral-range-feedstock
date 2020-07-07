@@ -20,7 +20,7 @@ requirements:
     - pip
     - python
   run:
-    - astropy
+    - astropy  # [win]
     - python-lal  # [not win]
     - python-lalsimulation  # [not win]
     - python
