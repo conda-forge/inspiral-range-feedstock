@@ -1,5 +1,5 @@
 {% set name = "inspiral_range" %}
-{% set version = "0.6.0" %}
+{% set version = "0.7.0" %}
 
 package:
   name: {{ name|lower|replace('_', '-') }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: a40b40a1ebf465c7087d72bbbd29cecde14763181a601614c03d2cc359570802
+  sha256: d1cd1a6fcf93cbf8c75444d67781a63c45559bed20c17ede2aaab0ff83c52343
 
 build:
   entry_points:
