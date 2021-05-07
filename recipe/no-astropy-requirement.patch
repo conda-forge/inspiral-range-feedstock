@@ -1,0 +1,12 @@
+diff --git a/setup.py b/setup.py
+index a1f853c..240fac7 100644
+--- a/setup.py
++++ b/setup.py
+@@ -27,7 +27,6 @@ setup(
+     ],
+ 
+     install_requires=[
+-        'astropy',
+         'numpy',
+         'pyyaml',
+         'scipy',
