@@ -19,11 +19,14 @@ requirements:
   host:
     - pip
     - python
+    - setuptools
   run:
     - astropy  # [win]
+    - gpstime
     - python-lal  # [not win]
     - python-lalsimulation  # [not win]
     - python
+    - pyyaml
     - scipy
 
 test:
