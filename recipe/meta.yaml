@@ -26,6 +26,7 @@ requirements:
   run:
     - astropy  # [win]
     - gpstime
+    - numpy
     - python-lal  # [not win]
     - python-lalsimulation  # [not win]
     - python
