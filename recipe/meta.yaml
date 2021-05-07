@@ -30,11 +30,15 @@ requirements:
     - scipy
 
 test:
-  imports:
-    - inspiral_range
   source_files:
+    # these are installed, but easier to refer to the ASD files from here
     - inspiral_range/test
+  requires:
+    - pip
   commands:
+    # validate requirements
+    - python -m pip check
+    # check the cli
     - inspiral-range --asd inspiral_range/test/O2.txt
     - inspiral-range --asd inspiral_range/test/O3.txt m1=30 m2=30
 
