@@ -1,5 +1,5 @@
 {% set name = "inspiral_range" %}
-{% set version = "0.8.1" %}
+{% set version = "0.8.3" %}
 
 package:
   name: {{ name|lower|replace('_', '-') }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 8a08590d926ccc58406e2fec42d4a123f08081be8e9139e812650d910abbeb84
+  sha256: 72faa54383e432f19640f1ccbe8f2aa9bffab1d3e583596ea91177021ea58b35
   patches:
     # remove astropy requirement on Unix, we can use lal
     - no-astropy-requirement.patch  # [not win]
