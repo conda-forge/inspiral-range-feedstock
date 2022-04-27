@@ -1,5 +1,5 @@
 {% set name = "inspiral_range" %}
-{% set version = "0.8.3" %}
+{% set version = "0.9.0" %}
 
 package:
   name: {{ name|lower|replace('_', '-') }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 72faa54383e432f19640f1ccbe8f2aa9bffab1d3e583596ea91177021ea58b35
+  sha256: 3d5d0b0e1dee8042cbc479907eb9ed87f62856e7826ba98e5b4737778a5a26a1
   patches:
     # remove astropy requirement on Unix, we can use lal
     - no-astropy-requirement.patch  # [not win]
@@ -15,7 +15,7 @@ source:
 build:
   entry_points:
     - inspiral-range = inspiral_range.__main__:main
-  number: 2
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
