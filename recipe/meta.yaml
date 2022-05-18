@@ -19,17 +19,21 @@ build:
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
+  build:
+    - python                              # [build_platform != target_platform]
+    - cross-python_{{ target_platform }}  # [build_platform != target_platform]
   host:
     - pip
     - python
     - setuptools
+    - setuptools-scm
   run:
     - astropy  # [win]
     - gpstime
     - numpy
+    - python
     - python-lal  # [not win]
     - python-lalsimulation  # [not win]
-    - python
     - pyyaml
     - scipy
 
