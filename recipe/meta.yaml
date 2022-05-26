@@ -43,6 +43,8 @@ test:
   commands:
     # validate requirements
     - python -m pip check
+    # run the test suite (needs lalsimulation)
+    - python -m inspiral_range.test -dt  # [not win]
     # check the cli
     - inspiral-range --asd inspiral_range/test/O2.txt
     - inspiral-range --asd inspiral_range/test/O3.txt m1=30 m2=30
