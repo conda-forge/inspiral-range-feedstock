@@ -1,5 +1,5 @@
 {% set name = "inspiral_range" %}
-{% set version = "0.9.0" %}
+{% set version = "0.9.1" %}
 
 package:
   name: {{ name|lower|replace('_', '-') }}
@@ -7,10 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 3d5d0b0e1dee8042cbc479907eb9ed87f62856e7826ba98e5b4737778a5a26a1
-  patches:
-    # remove astropy requirement on Unix, we can use lal
-    - no-astropy-requirement.patch  # [not win]
+  sha256: c2c4a4c9851f99b22f375a6ffd4359a33a97a1f9bad4e583ba908bad72624b86
 
 build:
   entry_points:
@@ -28,7 +25,7 @@ requirements:
     - setuptools
     - setuptools-scm
   run:
-    - astropy  # [win]
+    - astropy
     - gpstime
     - numpy
     - python
@@ -46,6 +43,8 @@ test:
   commands:
     # validate requirements
     - python -m pip check
+    # run the test suite (needs lalsimulation)
+    - python -m inspiral_range.test -dt  # [not win]
     # check the cli
     - inspiral-range --asd inspiral_range/test/O2.txt
     - inspiral-range --asd inspiral_range/test/O3.txt m1=30 m2=30
