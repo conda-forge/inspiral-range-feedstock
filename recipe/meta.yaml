@@ -14,6 +14,7 @@ build:
     - inspiral-range = inspiral_range.__main__:main
   number: 0
   script: {{ PYTHON }} -m pip install . -vv
+  skip: true  # [py<38]
 
 requirements:
   build:
@@ -32,7 +33,7 @@ requirements:
     - python-lal  # [not win]
     - python-lalsimulation  # [not win]
     - pyyaml
-    - scipy
+    - scipy >=1.8.0
 
 test:
   source_files:
@@ -42,7 +43,8 @@ test:
     - pip
   commands:
     # validate requirements
-    - python -m pip check
+    - python -m pip check inspiral-range
+    - python -m pip show inspiral-range
     # run the test suite (needs lalsimulation)
     - python -m inspiral_range.test -dt  # [not win]
     # check the cli
