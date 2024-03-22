@@ -25,12 +25,12 @@ requirements:
   run:
     - __unix  # [unix]
     - __win  # [win]
-    - astropy
+    - astropy  # [win]
     - gpstime
     - numpy
     - python >=3.8
-    - python-lal  # [not win]
-    - python-lalsimulation  # [not win]
+    - python-lal  # [unix]
+    - python-lalsimulation  # [unix]
     - pyyaml
     - scipy >=1.8.0
 
