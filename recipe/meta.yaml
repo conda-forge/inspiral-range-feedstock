@@ -12,24 +12,23 @@ source:
 build:
   entry_points:
     - inspiral-range = inspiral_range.__main__:main
-  number: 1
+  noarch: python
+  number: 2
   script: {{ PYTHON }} -m pip install . -vv
-  skip: true  # [py<38]
 
 requirements:
-  build:
-    - python                              # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}  # [build_platform != target_platform]
   host:
     - pip
-    - python
+    - python >=3.8
     - setuptools
     - setuptools-scm
   run:
+    - __unix  # [unix]
+    - __win  # [win]
     - astropy
     - gpstime
     - numpy
-    - python
+    - python >=3.8
     - python-lal  # [not win]
     - python-lalsimulation  # [not win]
     - pyyaml
