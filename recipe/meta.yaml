@@ -13,7 +13,7 @@ build:
   entry_points:
     - inspiral-range = inspiral_range.__main__:main
   noarch: python
-  number: 2
+  number: 3
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -25,7 +25,7 @@ requirements:
   run:
     - __unix  # [unix]
     - __win  # [win]
-    - astropy  # [win]
+    - astropy-base  # [win]
     - gpstime
     - numpy
     - python >=3.8
