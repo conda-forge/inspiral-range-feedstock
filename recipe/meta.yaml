@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: e97b37de32e3157fe07ecb5af67c37b6919d6e9991a54723c727bb94fe4281bb
   patches:
     # remove astropy from install_requires, it's optional on Unix
