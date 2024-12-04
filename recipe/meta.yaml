@@ -19,7 +19,7 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
     - setuptools
     - setuptools-scm
   run:
@@ -28,7 +28,7 @@ requirements:
     - astropy-base  # [win]
     - gpstime
     - numpy
-    - python >=3.8
+    - python >={{ python_min }}
     - python-lal  # [unix]
     - python-lalsimulation  # [unix]
     - pyyaml
@@ -40,6 +40,7 @@ test:
     - inspiral_range/test
   requires:
     - pip
+    - python {{ python_min }}
   commands:
     # validate requirements
     - python -m pip check inspiral-range
